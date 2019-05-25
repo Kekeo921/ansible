@@ -9,3 +9,6 @@
     ios_command:
      commands:
        - show ip interface brief
+    register: ipbrief
+
+  - debug: var=ipbrief.stdout_lines
