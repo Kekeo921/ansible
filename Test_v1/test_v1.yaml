@@ -1,0 +1,11 @@
+---
+
+- hosts: Routers
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Show run
+    ios_command:
+     commands:
+       - show ip interface brief
