@@ -167,8 +167,10 @@ R9                         : ok=2    changed=0    unreachable=0    failed=0    s
 ```
 ansible-playbook --limit R1  test_v1.yaml -u cisco -k
 ```
-***Output***
-```
+<details>
+<summary>Output</summary>
+
+<pre>
 PLAY [Routers] **********************************************************************************
 
 TASK [Show run] *********************************************************************************
@@ -190,5 +192,5 @@ ok: [R1] => {
 
 PLAY RECAP **************************************************************************************
 R1                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-
-```
+</pre>
+</details>
