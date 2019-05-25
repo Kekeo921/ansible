@@ -10,6 +10,7 @@ ansible-playbook test_v1.yaml -u cisco -k
 ```
 <details open>
   <summary>Output</summary>
+  ```
 PLAY [Routers] **********************************************************************************
 
 TASK [Show run] *********************************************************************************
@@ -157,7 +158,7 @@ R6                         : ok=2    changed=0    unreachable=0    failed=0    s
 R7                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 R8                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 R9                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-
+```
 </details>
 
 ### ***Run test_v1.yaml on limit to just one host(run as user cisco and ask for password)***
