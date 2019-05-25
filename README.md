@@ -1,6 +1,3 @@
-# ansible
-AnsibleTests
-
 ## Just for testing purposes
 
 ### Topology for tests v1
