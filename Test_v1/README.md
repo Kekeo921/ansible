@@ -163,7 +163,7 @@ R9                         : ok=2    changed=0    unreachable=0    failed=0    s
 </pre>
 </details>
 
-### ***Run test_v1.yaml on limit to just one host(run as user cisco and ask for password)***
+### ***Run test_v1.yaml with limit to just one host(run as user cisco and ask for password)***
 ```
 ansible-playbook --limit R1  test_v1.yaml -u cisco -k
 ```
