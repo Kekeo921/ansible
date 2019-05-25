@@ -256,3 +256,64 @@ R7                         : ok=2    changed=0    unreachable=0    failed=0    s
 
 </pre>
 </details>
+
+### ***Run test_v1.yaml on group of hosts(run as user cisco and ask for password)***
+```
+ansible-playbook --limit Edge30  test_v1.yaml -u cisco -k
+```
+<details>
+<summary>Output</summary>
+<pre>
+PLAY [Routers] **********************************************************************************
+
+TASK [Show run] *********************************************************************************
+ok: [R7]
+ok: [R8]
+ok: [R9]
+
+TASK [debug] ************************************************************************************
+ok: [R7] => {
+    "ipbrief.stdout_lines": [
+        [
+            "Interface                  IP-Address      OK? Method Status                Protocol",
+            "Ethernet0/0                unassigned      YES NVRAM  administratively down down    ",
+            "GigabitEthernet0/0         10.0.0.3        YES NVRAM  up                    up      ",
+            "GigabitEthernet1/0         30.0.0.1        YES manual up                    up      ",
+            "GigabitEthernet2/0         unassigned      YES NVRAM  administratively down down    ",
+            "SSLVPN-VIF0                unassigned      NO  unset  up                    up"
+        ]
+    ]
+}
+ok: [R8] => {
+    "ipbrief.stdout_lines": [
+        [
+            "Interface                  IP-Address      OK? Method Status                Protocol",
+            "Ethernet0/0                unassigned      YES NVRAM  administratively down down    ",
+            "GigabitEthernet0/0         unassigned      YES NVRAM  administratively down down    ",
+            "GigabitEthernet1/0         30.0.0.2        YES NVRAM  up                    up      ",
+            "GigabitEthernet2/0         30.1.0.1        YES NVRAM  up                    up      ",
+            "SSLVPN-VIF0                unassigned      NO  unset  up                    up"
+        ]
+    ]
+}
+ok: [R9] => {
+    "ipbrief.stdout_lines": [
+        [
+            "Interface                  IP-Address      OK? Method Status                Protocol",
+            "Ethernet0/0                unassigned      YES NVRAM  administratively down down    ",
+            "GigabitEthernet0/0         unassigned      YES NVRAM  administratively down down    ",
+            "GigabitEthernet1/0         unassigned      YES NVRAM  administratively down down    ",
+            "GigabitEthernet2/0         30.1.0.2        YES NVRAM  up                    up      ",
+            "SSLVPN-VIF0                unassigned      NO  unset  up                    up"
+        ]
+    ]
+}
+
+PLAY RECAP **************************************************************************************
+R7                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+R8                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+R9                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+
+</pre>
+</details>
