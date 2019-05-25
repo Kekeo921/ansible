@@ -1,14 +1,16 @@
+
 ---
 
-- hosts: Routers
+- hosts: Routers #use group of hosts, single host or "all"
   gather_facts: no
   connection: local
 
   tasks:
-  - name: Show run
+  - name: Show ip interface brief
     ios_command:
      commands:
-       - show ip interface brief
+       - show ip interface brief #use "show" command
     register: ipbrief
 
   - debug: var=ipbrief.stdout_lines
+
