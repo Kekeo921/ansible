@@ -189,3 +189,147 @@ R9                         : ok=5    changed=2    unreachable=0    failed=0    s
 
 </pre>
 </details>
+### ***Run delete_users_v1.yaml (run as user cisco and ask for password)***
+```
+ansible-playbook delete_users_v1.yaml -u cisco -k
+```
+<details>
+<summary>Output</summary>
+<pre>
+
+PLAY [Routers] *******************************************************************************************************************
+
+TASK [Delete users cli] **********************************************************************************************************
+changed: [R10]
+changed: [R4]
+changed: [R7]
+changed: [R1]
+changed: [R2]
+changed: [R3]
+changed: [R8]
+changed: [R5]
+changed: [R9]
+changed: [R6]
+
+TASK [Show users] ****************************************************************************************************************
+ok: [R10]
+ok: [R4]
+ok: [R1]
+ok: [R2]
+ok: [R7]
+ok: [R3]
+ok: [R8]
+ok: [R9]
+ok: [R5]
+ok: [R6]
+
+TASK [debug] *********************************************************************************************************************
+ok: [R10] => {
+    "user.stdout_lines": [
+        [
+            "username cisco privilege 15 secret 5 $1$eZ7H$Q.5UxpjUWNDKZde3mdhO/0"
+        ]
+    ]
+}
+ok: [R1] => {
+    "user.stdout_lines": [
+        [
+            "username cisco privilege 15 secret 5 $1$jlv/$wuFQnbRy0H.IKbFKHMM2p0"
+        ]
+    ]
+}
+ok: [R7] => {
+    "user.stdout_lines": [
+        [
+            "username cisco privilege 15 secret 5 $1$JhMs$md2lzXu6XVeRCpqf7Fkxj0"
+        ]
+    ]
+}
+ok: [R2] => {
+    "user.stdout_lines": [
+        [
+            "username cisco privilege 15 secret 5 $1$OM/E$VswczdJwbqvFfLcthiGaA0"
+        ]
+    ]
+}
+ok: [R4] => {
+    "user.stdout_lines": [
+        [
+            "username cisco privilege 15 secret 5 $1$DHza$H4oU0u./egj/KzgYJvr0f0"
+        ]
+    ]
+}
+ok: [R3] => {
+    "user.stdout_lines": [
+        [
+            "username cisco privilege 15 secret 5 $1$HDq2$f29x7e9ll.pyz9hjX2Z780"
+        ]
+    ]
+}
+ok: [R8] => {
+    "user.stdout_lines": [
+        [
+            "username cisco privilege 15 secret 5 $1$yO1.$MgFUekXeDqii/gEaBn2CY."
+        ]
+    ]
+}
+ok: [R5] => {
+    "user.stdout_lines": [
+        [
+            "username cisco privilege 15 secret 5 $1$/Flb$0INw3P4/rIsWgp1feJnJo/"
+        ]
+    ]
+}
+ok: [R9] => {
+    "user.stdout_lines": [
+        [
+            "username cisco privilege 15 secret 5 $1$0bV9$xDMQTI4dExOAGGqgzXQlH1"
+        ]
+    ]
+}
+ok: [R6] => {
+    "user.stdout_lines": [
+        [
+            "username cisco privilege 15 secret 5 $1$THAT$mLkSL8YaedYLY9to53PCf/"
+        ]
+    ]
+}
+
+TASK [Save running-config] *******************************************************************************************************
+changed: [R10]
+changed: [R7]
+changed: [R1]
+changed: [R4]
+changed: [R2]
+changed: [R3]
+changed: [R8]
+changed: [R5]
+changed: [R9]
+changed: [R6]
+
+TASK [Compare startup to running-config] *****************************************************************************************
+ok: [R10]
+ok: [R4]
+ok: [R1]
+ok: [R7]
+ok: [R2]
+ok: [R3]
+ok: [R8]
+ok: [R9]
+ok: [R5]
+ok: [R6]
+
+PLAY RECAP ***********************************************************************************************************************
+R1                         : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+R10                        : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+R2                         : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+R3                         : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+R4                         : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+R5                         : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+R6                         : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+R7                         : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+R8                         : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+R9                         : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+</pre>
+</details>
