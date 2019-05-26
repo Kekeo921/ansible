@@ -190,7 +190,7 @@ R9                         : ok=5    changed=2    unreachable=0    failed=0    s
 </pre>
 </details>
 
-###***Run delete_users_v1.yaml (run as user cisco and ask for password)***
+### ***Run delete_users_v1.yaml (run as user cisco and ask for password)***
 ```
 ansible-playbook delete_users_v1.yaml -u cisco -k
 ```
