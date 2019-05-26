@@ -1,0 +1,32 @@
+---
+
+ - hosts: Routers
+   connection: network_cli
+   gather_facts: false
+
+   tasks:
+   - name: Delete users cli #by command
+     ios_config:
+      lines:
+       - no username krzys privilege 15 secret cisco1
+       - no username maciek privilege 15 secret cisco2
+       - no username adam privilege 15 secret cisco3
+       - no username ola privilege 15 secret cisco4
+   - name: Show users # display users (running config)
+     ios_command:
+      commands:
+       - show running-config | i user
+     register: user
+   - debug: var=user.stdout_lines
+
+   - name: Save running-config # save config when modified
+     ios_config:
+      save_when: modified
+
+   - name: Compare startup to running-config 
+     ios_config:
+      diff_against: startup
+     diff: true
+     register: diff
+
+
