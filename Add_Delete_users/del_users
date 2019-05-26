@@ -1,0 +1,5 @@
+#commands for delete_users_v2.yaml 
+no username krzys privilege 15 secret cisco1
+no username maciek privilege 15 secret cisco2
+no username adam privilege 15 secret cisco3
+no username ola privilege 15 secret cisco4
