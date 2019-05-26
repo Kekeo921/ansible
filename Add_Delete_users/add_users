@@ -1,0 +1,5 @@
+# commands for add_users_v2.yaml
+username krzys privilege 15 secret cisco1
+username maciek privilege 15 secret cisco2
+username adam privilege 15 secret cisco3
+username ola privilege 15 secret cisco4
