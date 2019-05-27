@@ -1,0 +1,27 @@
+---
+
+ - hosts: Routers
+   connection: network_cli
+   gather_facts: false
+
+   tasks:
+   - name: Add users
+     ios_config:
+       src: "/etc/ansible/cisco/CONFIGS/add_users"
+
+   - name: Show users
+     ios_command:
+      commands:
+       - show running-config | i user
+     register: user
+   - debug: var=user.stdout_lines
+
+   - name: Save running-config
+     ios_config:
+      save_when: modified
+
+   - name: Compare startup to running-config
+     ios_config:
+      diff_against: startup
+     diff: true
+     register: diff
