@@ -15,53 +15,53 @@ PLAY [Routers] *****************************************************************
 TASK [show run] **************************************************************************************************************************
 ok: [R10]
 ok: [R1]
-ok: [R4]
 ok: [R7]
+ok: [R4]
 ok: [R2]
-ok: [R3]
-ok: [R9]
 ok: [R8]
+ok: [R3]
 ok: [R5]
+ok: [R9]
 ok: [R6]
 
 TASK [check hosts backup directory] ******************************************************************************************************
 changed: [R7]
-changed: [R10]
+changed: [R1]
 changed: [R4]
-ok: [R1]
 changed: [R2]
+changed: [R10]
 changed: [R3]
 changed: [R9]
-changed: [R5]
 changed: [R8]
+changed: [R5]
 changed: [R6]
 
 TASK [create timestamp] ******************************************************************************************************************
-changed: [R2]
+changed: [R1]
 changed: [R7]
 changed: [R4]
+changed: [R2]
 changed: [R10]
-changed: [R1]
-changed: [R3]
 changed: [R8]
 changed: [R5]
 changed: [R9]
 changed: [R6]
+changed: [R3]
 
 TASK [copy] ******************************************************************************************************************************
-ok: [R1]
-changed: [R10]
-changed: [R2]
 changed: [R4]
+changed: [R1]
 changed: [R7]
+changed: [R2]
+changed: [R10]
 changed: [R3]
-changed: [R6]
-changed: [R9]
-changed: [R5]
 changed: [R8]
+changed: [R6]
+changed: [R5]
+changed: [R9]
 
 PLAY RECAP *******************************************************************************************************************************
-R1                         : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+R1                         : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 R10                        : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 R2                         : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 R3                         : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
