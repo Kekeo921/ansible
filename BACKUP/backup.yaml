@@ -1,0 +1,25 @@
+---
+ - hosts: Routers
+   gather_facts: false
+   connection: local
+
+
+   tasks:
+    - name: show run
+      ios_command:
+       commands:
+        - show run
+      register: config
+
+    - name: check hosts backup directory
+      file:
+        path: "/etc/ansible/cisco/BACKUP/{{ inventory_hostname }}"
+        state: directory
+
+    - name: create timestamp
+      command: date +%d%m%Y
+      register: timestamp
+
+    - copy:
+        content: "{{ config.stdout[0] }}"
+        dest: "/etc/ansible/cisco/BACKUP/{{ inventory_hostname }}/{{ inventory_hostname }}_running-config_{{ timestamp.stdout }}.txt"
