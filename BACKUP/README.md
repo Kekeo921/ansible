@@ -103,3 +103,140 @@ R9                         : ok=4    changed=3    unreachable=0    failed=0    s
 │       └── R9_running-config_29052019.txt
 </pre>
 </details>
+
+
+<details>
+<summary>Backup file</summary>
+
+<pre>
+Building configuration...
+
+Current configuration : 1525 bytes
+!
+upgrade fpd auto
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R10
+!
+boot-start-marker
+boot-end-marker
+!
+logging message-counter syslog
+!
+no aaa new-model
+ip source-route
+no ip icmp rate-limit unreachable
+ip cef
+!
+!
+!
+!
+no ip domain lookup
+ip domain name test.com
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+memory-size iomem 0
+username cisco privilege 15 secret 5 $1$eZ7H$Q.5UxpjUWNDKZde3mdhO/0
+archive
+ log config
+  hidekeys
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+ip ssh version 2
+!
+!
+!
+!
+interface Ethernet0/0
+ no ip address
+ shutdown
+ duplex auto
+!
+interface GigabitEthernet0/0
+ ip address 10.0.0.1 255.255.255.0
+ duplex full
+ speed 1000
+ media-type gbic
+ negotiation auto
+!
+interface GigabitEthernet1/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet2/0
+ ip address 192.168.1.100 255.255.255.0
+ negotiation auto
+!
+ip forward-protocol nd
+ip route 20.0.0.0 255.254.0.0 10.0.0.2
+ip route 30.0.0.0 255.254.0.0 10.0.0.3
+ip route 40.0.0.0 255.254.0.0 10.0.0.4
+no ip http server
+no ip http secure-server
+!
+!
+!
+no cdp log mismatch duplex
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+mgcp fax t38 ecm
+!
+!
+!
+!
+gatekeeper
+ shutdown
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+</pre>
+</details>
