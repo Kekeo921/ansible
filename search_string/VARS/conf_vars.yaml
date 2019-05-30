@@ -1,0 +1,6 @@
+---
+conf:
+   line1: ip address 20.0.0.1 255.255.255.252
+   line2: ntp server 10.100.100.100
+   line3: ip route 20.0.0.0 255.254.0.0 10.0.0.2
+   line4: ip domain name test.com
