@@ -1,0 +1,46 @@
+---
+
+ - hosts: Routers
+   connection: local
+   gather_facts: false
+
+   tasks:
+   - name: Get conf vars
+     include_vars: ./VARS/conf_vars.yaml
+
+   - name: Get login vars
+     include_vars: ./LOGINS/logins.yaml
+
+   - name: Define login
+     set_fact:
+      provider:
+       host: "{{ ansible_host }}"
+       username: "{{user['username']}}"
+       password: "{{user['password']}}"
+
+   - name: Show ip interface brief
+     ios_command:
+      provider: "{{ provider }}"
+      commands:
+        - show running-config
+     register: ipbrief
+
+   - name: check line; {{ conf['line1'] }} (skipp if exists)
+     debug:
+      msg: "{{ conf['line1'] }} is missing"
+     when: ipbrief.stdout | join ('') is not search(conf['line1'])
+
+   - name: check line; {{ conf['line2'] }} (skipp if exists))
+     debug:
+      msg: "line:{{ conf['line2'] }} is missing"
+     when: ipbrief.stdout | join ('') is not search(conf['line2'])
+
+   - name: check line; {{ conf['line3'] }} (skipp if exists))
+     debug:
+      msg: "line:{{ conf['line3'] }} is missing"
+     when: ipbrief.stdout | join ('') is not search(conf['line3'])
+
+   - name: check line; {{ conf['line4'] }} (skipp if exists))
+     debug:
+      msg: "line:{{ conf['line4'] }} is missing"
+     when: ipbrief.stdout | join ('') is not search("conf['line4']")
