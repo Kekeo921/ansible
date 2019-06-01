@@ -9,11 +9,11 @@ test_v1.yaml - show ip int brief on multiple devices
 
 **add_users_v1.yaml** - add users (configuration lines in yaml)
 
-**add_users_v2.yaml** - add users (configuration lines storen in .txt file)
+**add_users_v2.yaml** - add users (configuration lines stored in .txt file)
 
 **delete_users_v1.yaml** - delete users (configuration lines in yaml) 
 
-**delete_users_v2.yaml** - add users (configuration lines storen in .txt file)
+**delete_users_v2.yaml** - add users (configuration lines stored in .txt file)
 
 **user_purge.yaml** - keep ***only*** listed users 
 
