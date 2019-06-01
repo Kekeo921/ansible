@@ -21,7 +21,7 @@ test_v1.yaml - show ip int brief on multiple devices
 
 **string_search.yaml** - check if running config contains certain string (strings storen in a file)
 
-***4. BACKUP *** 
+***4. BACKUP*** 
 
 **backup.yaml** - create backup (using command "show running-config")
  
