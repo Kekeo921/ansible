@@ -19,7 +19,7 @@ test_v1.yaml - show ip int brief on multiple devices
 
 ***3. search_string*** 
 
-**string_search.yaml** - check if running config contains certain string (strings storen in a file)
+**string_search.yaml** - check if running config contains certain string (strings stored in a file)
 
 ***4. BACKUP*** 
 
