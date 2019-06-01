@@ -1,0 +1,33 @@
+---
+
+ - hosts: Routers
+   connection: local
+   gather_facts: false
+
+   tasks:
+   - name: Get login vars
+     include_vars: ./LOGINS/logins.yaml
+
+   - name: Define login
+     set_fact:
+      provider:
+       host: "{{ ansible_host }}"
+       username: "{{user['username']}}"
+       password: "{{user['password']}}"
+
+   - name: check hosts backup directory 
+     file:
+      path: "/etc/ansible/cisco/BACKUP/{{ inventory_hostname }}"
+      state: directory
+
+   - name: create timestamp
+     command: date +%d%m%Y
+     register: timestamp 
+
+   - name: configurable backup path
+     ios_config:
+      provider: "{{ provider }}"
+      backup: yes
+      backup_options:
+        filename: "{{ timestamp.stdout }}_{{ inventory_hostname }}_config.txt"
+        dir_path: /etc/ansible/cisco/BACKUP/{{ inventory_hostname }}/
