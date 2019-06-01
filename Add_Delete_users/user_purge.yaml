@@ -1,0 +1,30 @@
+---
+
+ - hosts: Routers
+   connection: local
+   gather_facts: false
+
+   tasks:
+   - name: Get login vars
+     include_vars: ./LOGINS/logins.yaml
+
+   - name: Define login
+     set_fact:
+      provider:
+       host: "{{ ansible_host }}"
+       username: "{{user['username']}}"
+       password: "{{user['password']}}"
+
+   - name: Delete useless users 
+     ios_user:
+      provider: "{{ provider }}"
+      aggregate:
+       - name: cisco
+       - name: krzys
+       - name: adam
+      purge: yes
+      
+   - name: Save running-config
+     ios_config:
+      provider: "{{ provider }}"
+      save_when: modified
