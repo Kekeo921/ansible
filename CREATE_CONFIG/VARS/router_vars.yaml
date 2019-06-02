@@ -1,0 +1,25 @@
+---
+routers: 
+  - hostname: R1
+    dns1: 192.168.1.50
+    ntp1: 10.0.0.1
+    ntp2: 192.168.1.50
+    lo_number: 1
+    lo_description: test R1
+    lo_ip_add: 2.0.1.1 255.255.255.0
+
+  - hostname: R2
+    dns1: 192.168.1.50
+    ntp1: 10.0.0.1
+    ntp2: 192.168.1.50
+    lo_number: 1
+    lo_description: test R2
+    lo_ip_add: 2.0.2.1 255.255.255.0
+    
+  - hostname: R3
+    dns1: 192.168.1.50
+    ntp1: 10.0.0.1
+    ntp2: 192.168.1.50
+    lo_number: 1
+    lo_description: test R3
+    lo_ip_add: 2.0.3.1 255.255.255.0
