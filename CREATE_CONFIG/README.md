@@ -24,7 +24,7 @@ localhost                  : ok=2    changed=1    unreachable=0    failed=0    s
 </pre>
 </details>
 
-This will generate 3 configuration files: 
+This is going to generate 3 configuration files: 
 ```
 ├── CONFIGS
 │   ├── R1.txt
@@ -33,7 +33,7 @@ This will generate 3 configuration files:
 ```
 
 <details>
-<summary>R1.txt</summary>
+<summary>R1.txt (configuration example)</summary>
 <pre>
 service timestamps debug datetime msec localtime show-timezone
 service timestamps log datetime msec localtime show-timezone
