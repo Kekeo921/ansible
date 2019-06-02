@@ -28,3 +28,9 @@ test_v1.yaml - show ip int brief on multiple devices
 **backup1.yaml** - create backup (using "backup" parameter)
 
 **push_backup.yaml** - push backup on device 
+
+***5 CREATE_CONFIG***
+
+**generate_router_conf.yaml** - create configuration file from template
+
+**push_config.yaml** - push configuration files to devices
