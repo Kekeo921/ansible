@@ -74,4 +74,40 @@ line vty 5 15
 ansible-playbook push_config.yaml --limit Edge20
 ```
 
-To push configuration to devices. 
+This is going to push configuration to devices.
+
+<details>
+<summary>Output</summary>
+<pre>
+TASK [Get login vars] ***************************************************************************
+ok: [R1]
+ok: [R2]
+ok: [R3]
+
+TASK [Define login] *****************************************************************************
+ok: [R1]
+ok: [R2]
+ok: [R3]
+
+TASK [push config] ******************************************************************************
+changed: [R1]
+changed: [R2]
+changed: [R3]
+
+TASK [Save running-config] **********************************************************************
+changed: [R1]
+changed: [R2]
+changed: [R3]
+
+TASK [Compare startup to running-config] ********************************************************
+ok: [R1]
+ok: [R3]
+ok: [R2]
+
+PLAY RECAP **************************************************************************************
+R1 : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0                       
+R2 : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0                       
+R3 : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0                                         
+
+</pre>
+</details>
