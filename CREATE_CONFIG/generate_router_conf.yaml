@@ -1,0 +1,21 @@
+---
+ - hosts: localhost
+   connection: local 
+   gather_facts: no
+   become: yes
+  
+   tasks:
+    - name: Get login vars
+      include_vars: ./VARS/router_vars.yaml
+  
+    - name: print module name one by one
+      debug:
+        msg: "{{ item }}"
+      with_items: "{{ routers }}"
+
+      
+    - name: Generate configuration files 
+      template:
+       src: ./TEMPLATES/router_config.txt 
+       dest: ./CONFIGS/{{item.hostname}}.txt
+      with_items: "{{ routers }}"
