@@ -32,3 +32,40 @@ This will generate 3 configuration files:
 │   └── R3.txt
 ```
 
+<details>
+<summary>R1.txt</summary>
+<pre>
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+service password-encryption
+!
+ip domain name test.com
+ip name-server 192.168.1.50
+ntp server 10.0.0.1
+ntp server 192.168.1.50
+!
+ip ssh version 2
+!
+interface Loopback1
+ description test R1
+ ip address 2.0.1.1 255.255.255.0
+!
+no ip http server
+no ip http secure-server
+!
+access-list 10 permit 10.0.0.0 0.255.255.255
+access-list 10 permit 192.168.1.0 0.0.0.255
+!
+line vty 0 4
+ access-class 10 in
+ login local
+ transport input ssh
+line vty 5 15
+ access-class 10 in
+ login local
+ transport input ssh
+!
+
+</pre>
+</details>
+
