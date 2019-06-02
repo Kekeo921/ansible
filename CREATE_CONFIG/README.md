@@ -69,3 +69,9 @@ line vty 5 15
 </pre>
 </details>
 
+### ***Run push_config.yaml***
+```
+ansible-playbook push_config.yaml --limit Edge20
+```
+
+To push configuration to devices. 
