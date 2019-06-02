@@ -1,0 +1,34 @@
+---
+
+ - hosts: Routers
+   connection: local
+   gather_facts: false
+    
+
+   tasks:
+   - name: Get login vars
+     include_vars: ./LOGINS/logins.yaml
+
+   - name: Define login
+     set_fact:
+      provider:
+       host: "{{ ansible_host }}"
+       username: "{{user['username']}}"
+       password: "{{user['password']}}"
+
+   - name: push config
+     ios_config:
+      provider: "{{ provider }}"
+      src: "/etc/ansible/cisco/CONFIGS/{{ inventory_hostname }}.txt"
+   
+   - name: Save running-config
+     ios_config:
+      provider: "{{ provider }}"
+      save_when: modified
+      
+   - name: Compare startup to running-config 
+     ios_config:
+      provider: "{{ provider }}"
+      diff_against: startup
+     diff: true
+     register: diff
