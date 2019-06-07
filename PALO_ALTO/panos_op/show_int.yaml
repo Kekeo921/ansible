@@ -1,0 +1,26 @@
+---
+  
+ - hosts: PaloAlto
+   connection: local
+   gather_facts: no
+   roles:
+   -  PaloAltoNetworks.paloaltonetworks
+
+   tasks:
+   - name: Get login vars
+     include_vars: /etc/ansible/palo_alto/LOGINS/logins.yaml
+   
+   - name: Define login
+     set_fact:
+      provider:
+       ip_address: "{{ ansible_host }}"
+       username: "{{user['username']}}"
+       password: "{{user['password']}}"
+
+   - name: show list of all interfaces
+     panos_op:
+      provider: "{{provider}}"
+      cmd: "show interface all"
+     register: showint
+     
+   - debug: var=showint.stdout
