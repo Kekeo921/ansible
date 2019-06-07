@@ -7,12 +7,6 @@
    tasks:
     - name: Get login vars
       include_vars: ./VARS/router_vars.yaml
-  
-    - name: print module name one by one
-      debug:
-        msg: "{{ item }}"
-      with_items: "{{ routers }}"
-
       
     - name: Generate configuration files 
       template:
