@@ -8,6 +8,8 @@ Show commands
 ansible-playbook show_int.yaml
 ```
 
+Shows list of all interfaces
+
 <details>
 <summary>Output</summary>
 <pre>
