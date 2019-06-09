@@ -207,3 +207,4 @@ PA1                        : ok=7    changed=3    unreachable=0    failed=0    s
 </details>
 
 ***PA GUI***
+![pa2](https://user-images.githubusercontent.com/50756076/59163393-dfa67600-8b00-11e9-8369-f4bd4cf30210.jpg)
