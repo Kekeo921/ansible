@@ -173,6 +173,36 @@ Create management profile, zones, and interfaces.
 <details>
 <summary>Output</summary>
 <pre>
+PLAY [PaloAlto] *********************************************************************************
+
+TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] ******************
+ok: [PA1]
+
+TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] *******************
+ok: [PA1]
+
+TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] *******************
+ok: [PA1]
+
+TASK [Define login] *****************************************************************************
+ok: [PA1]
+
+TASK [Create management profile] ****************************************************************
+changed: [PA1]
+
+TASK [create zone] ******************************************************************************
+changed: [PA1] => (item={u'zone': u'DMZ'})
+changed: [PA1] => (item={u'zone': u'INSIDE'})
+changed: [PA1] => (item={u'zone': u'OUTSIDE'})
+
+TASK [Create interfaces] ************************************************************************
+changed: [PA1] => (item={u'management_profile': u'PING', u'state': u'present', u'mode': u'Layer3', u'zone_name': u'OUTSIDE', u'ip': [u'193.254.247.58/24'], u'vr_name': u'default', u'if_name': u'ethernet1/1'})
+changed: [PA1] => (item={u'management_profile': u'PING', u'state': u'present', u'mode': u'Layer3', u'zone_name': u'INSIDE', u'ip': [u'10.0.0.1/24'], u'vr_name': u'default', u'if_name': u'ethernet1/2'})
+changed: [PA1] => (item={u'management_profile': u'PING', u'state': u'present', u'mode': u'Layer3', u'zone_name': u'DMZ', u'ip': [u'10.100.0.1/24'], u'vr_name': u'default', u'if_name': u'ethernet1/3'})
+
+PLAY RECAP **************************************************************************************
+PA1                        : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
 </pre>
 </details>
 
