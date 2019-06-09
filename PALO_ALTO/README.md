@@ -127,6 +127,7 @@ PA1                        : ok=7    changed=1    unreachable=0    failed=0    s
 </pre>
 </details>
 ### ***Run mgmt_conf.yaml***
+
 ```
 ansible-playbook mgmt_conf.yaml
 ```
