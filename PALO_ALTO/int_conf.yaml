@@ -1,0 +1,46 @@
+---
+  
+ - hosts: PaloAlto
+   connection: local
+   gather_facts: no
+   vars_files: 
+     - /etc/ansible/palo_alto/LOGINS/logins.yaml
+     - /etc/ansible/palo_alto/VARS/int_vars.yaml
+   roles:
+   -  PaloAltoNetworks.paloaltonetworks
+
+   tasks:
+ 
+   - name: Define login
+     set_fact:
+      provider:
+       ip_address: "{{ ansible_host }}"
+       username: "{{user['username']}}"
+       password: "{{user['password']}}"
+
+   - name: Create management profile
+     panos_management_profile:
+      provider: "{{ provider }}"
+      name: 'PING'
+      ping: true
+      
+   - name: create zone 
+     panos_zone:
+       provider: "{{ provider }}"
+       zone: "{{ item.zone }}"
+       mode: "layer3"
+     with_items: "{{ zones }}"
+
+   - name: Create interfaces
+     panos_interface:
+       provider: "{{ provider }}"
+       if_name: "{{item.if_name}}"
+       mode: "layer3"
+       vr_name: "{{item.vr_name}}"
+       management_profile: "{{ item.management_profile }}"
+       state: "{{item.state}}"
+       ip: "{{item.ip}}"
+       zone_name: "{{item.zone_name}}"
+       enable_dhcp: false
+       commit: false
+     with_items: "{{ Interfaces }}"
