@@ -132,6 +132,8 @@ PA1                        : ok=7    changed=1    unreachable=0    failed=0    s
 ```
 ansible-playbook mgmt_conf.yaml
 ```
+Push management config.
+
 <details>
 <summary>Output</summary>
 <pre>
