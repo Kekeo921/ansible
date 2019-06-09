@@ -1,0 +1,30 @@
+---
+ zones:
+   - zone: DMZ
+   - zone: INSIDE
+   - zone: OUTSIDE
+
+ Interfaces:
+   - if_name: ethernet1/1
+     mode: Layer3
+     vr_name: default
+     management_profile: PING
+     state: present
+     ip: [193.254.247.58/24]
+     zone_name: OUTSIDE
+
+   - if_name: ethernet1/2
+     mode: Layer3
+     vr_name: default
+     management_profile: PING
+     state: present
+     ip: [10.0.0.1/24]
+     zone_name: INSIDE
+     
+   - if_name: ethernet1/3
+     mode: Layer3
+     vr_name: default
+     management_profile: PING
+     state: present
+     ip: [10.100.0.1/24]
+     zone_name: DMZ
