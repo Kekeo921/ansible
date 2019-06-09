@@ -126,3 +126,32 @@ PA1                        : ok=7    changed=1    unreachable=0    failed=0    s
 
 </pre>
 </details>
+### ***Run mgmt_conf.yaml***
+```
+ansible-playbook mgmt_conf.yaml
+```
+<details>
+<summary>Output</summary>
+<pre>
+PLAY [PaloAlto] *********************************************************************************
+
+TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] ******************
+ok: [PA1]
+
+TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] *******************
+ok: [PA1]
+
+TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] *******************
+ok: [PA1]
+
+TASK [Define login] *****************************************************************************
+ok: [PA1]
+
+TASK [set dns, ntp, and panorama but don't commit] **********************************************
+changed: [PA1]
+
+PLAY RECAP **************************************************************************************
+PA1                        : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+</pre>
+</details>
