@@ -1,0 +1,9 @@
+---
+     hostname: "PA1"
+     domain: "Test"
+     dns_server_primary: "192.168.1.1"
+     dns_server_secondary: "8.8.8.8"
+     ntp_server_primary: "192.168.1.50"
+     ntp_server_secondary: "10.0.0.1"
+     timezone: "Europe/Warsaw" 
+     login_banner: "| TEST |"
