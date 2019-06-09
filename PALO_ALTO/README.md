@@ -159,3 +159,6 @@ PA1                        : ok=5    changed=1    unreachable=0    failed=0    s
 
 </pre>
 </details>
+
+***PA GUI***
+![p1](https://user-images.githubusercontent.com/50756076/59163215-3c546180-8afe-11e9-8de8-5ab0ad58144f.jpg)
