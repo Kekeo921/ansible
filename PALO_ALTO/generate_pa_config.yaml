@@ -1,0 +1,15 @@
+---
+ - hosts: localhost
+   connection: local 
+   gather_facts: no
+   become: yes
+  
+   tasks:
+    - name: Get login vars
+      include_vars: ./VARS/pa_vars.yaml
+           
+    - name: Generate configuration files 
+      template:
+       src: ./TEMPLATES/pa_conf.txt 
+       dest: ./CONFIGS/{{item.hostname}}.xml
+      with_items: "{{ palo_alto }}"
