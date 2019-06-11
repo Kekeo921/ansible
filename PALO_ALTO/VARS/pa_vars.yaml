@@ -1,0 +1,14 @@
+---
+palo_alto: 
+  - hostname: PA1
+    ip_e1_1: 213.252.131.35/30
+    ip_e1_2: 10.100.100.1/24
+    ip_e1_3: 10.10.10.1/24
+    e1_1_mgmt_profile: PING
+    e1_2_mgmt_profile: PING2
+    e1_3_mgmt_profile: PING2
+    sys_dns_1: 192.168.1.1
+    sys_dns_2: 8.8.8.8
+    banner: BANNER TEST
+    ntp_1: 192.168.1.50
+    ntp_2: 10.0.0.1
