@@ -1,0 +1,12 @@
+
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/gitlab/ssl/gitlab.home.pl.key -out /etc/gitlab/ssl/gitlab.home.pl.crt
+
+
+
+## GitLab URL
+##! URL on which GitLab will be reachable.
+##! For more details on configuring external_url see:
+##! https://docs.gitlab.com/omnibus/settings/configuration.html#configuring-the-external-url-for-gitlab
+external_url 'https://gitlab.home.pl:8443'
+
+
