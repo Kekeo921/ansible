@@ -10,3 +10,6 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/gitlab/ssl/gitl
 external_url 'https://gitlab.home.pl:8443'
 
 
+
+
+ssh -i ~/.ssh/id_rsa root@192.168.1.60 -p 22
